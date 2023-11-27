@@ -13,7 +13,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $cantidad = $_POST['cantidad'];
         $fecha_pedido = $_POST['fecha_pedido'];
 
-        $sql = "UPDATE pedidos SET nombre_cliente='$nombre_cliente', direccion='$direccion', telefono='$telefono', pizza_seleccionada='$pizza_seleccionada', cantidad='$cantidad', fecha_pedido='$fecha_pedido' WHERE id_pedidos='$id_pedidos'";
+       
+        $sql = "UPDATE pedidos
+        SET nombre_cliente='$nombre_cliente', direccion='$direccion', telefono='$telefono',
+            pizza_seleccionada='$pizza_seleccionada', cantidad='$cantidad', fecha_pedido='$fecha_pedido'
+        WHERE id_pedidos='$id_pedidos'";
         $resultado = mysqli_query($conexion, $sql);
 
         if ($resultado) {
@@ -35,7 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $id_pedidos = isset($_GET['id_pedidos']) ? $_GET['id_pedidos'] : null;
 
     if ($id_pedidos !== null) {
-        $sql = "SELECT * FROM pedidos WHERE id_pedidos='$id_pedidos'";
+        $sql = "SELECT pedidos.*, pizzas.nombre_pizza
+                FROM pedidos
+                JOIN pedidos_pizzas ON pedidos.id_pedidos = pedidos_pizzas.id_pedidos
+                JOIN pizzas ON pedidos_pizzas.id_pizzas = pizzas.id_pizzas
+                WHERE pedidos.id_pedidos='$id_pedidos'";
         $resultado = mysqli_query($conexion, $sql);
 
         if ($resultado) {
@@ -43,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $nombre_cliente = $fila["nombre_cliente"];
             $direccion = $fila["direccion"];
             $telefono = $fila["telefono"];
-            $pizza_seleccionada = $fila["pizza_seleccionada"];
+            $pizza_seleccionada = $fila["nombre_pizza"];  // Obtenemos el nombre de la pizza directamente desde la tabla pizzas
             $cantidad = $fila["cantidad"];
             $fecha_pedido = $fila["fecha_pedido"];
 
@@ -70,25 +78,24 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h1>Editar pizza</h1>
     <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
 
-    <label>Nombre: </label>
-    <input type="text" name="nombre_cliente" value="<?= isset($nombre_cliente) ? $nombre_cliente : '' ?>"><br>
+    <label for="nombre_cliente">Nombre: </label>
+    <input type="text" name="nombre_cliente" id="nombre_cliente" value="<?= isset($nombre_cliente) ? $nombre_cliente : '' ?>"><br>
 
-    <label>Direccion: </label>
-    <input type="text" name="direccion" value="<?= isset($direccion) ? $direccion : '' ?>"><br>
+    <label for="direccion">Direccion: </label>
+    <input type="text" name="direccion" id="direccion" value="<?= isset($direccion) ? $direccion : '' ?>"><br>
 
-    <label>Telefono </label>
-    <input type="text" name="telefono" value="<?= isset($telefono) ? $telefono : '' ?>"><br>
+    <label for="telefono">Telefono: </label>
+<input type="text" name="telefono" id="telefono" value="<?= isset($telefono) ? $telefono : '' ?>"><br>
 
-    <label>Pedido: </label>
-    <input type="text" name="pizza_seleccionada" value="<?= isset($pizza_seleccionada) ? $pizza_seleccionada : '' ?>"><br>
+<label for="pizza_seleccionada">Pedido: </label>
+<input type="text" name="pizza_seleccionada" id="pizza_seleccionada" value="<?= isset($pizza_seleccionada) ? $pizza_seleccionada : '' ?>"><br>
 
-    <label>Cantidad: </label>
-    <input type="number" name="cantidad" value="<?= isset($cantidad) ? $cantidad : '' ?>"><br>
+<label for="cantidad">Cantidad: </label>
+<input type="number" name="cantidad" id="cantidad" value="<?= isset($cantidad) ? $cantidad : '' ?>"><br>
 
-    <label>Fecha de pedido: </label>
-    <input type="date" name="fecha_pedido" value="<?= isset($fecha_pedido) ? $fecha_pedido : '' ?>"><br>
+<label for="fecha_pedido">Fecha de pedido: </label>
+<input type="date" name="fecha_pedido" id="fecha_pedido" value="<?= isset($fecha_pedido) ? $fecha_pedido : '' ?>"><br>
 
-    <input type="hidden" name="id_pedidos" value="<?= isset($id_pedidos) ? $id_pedidos : '' ?>">
 
     <input type="submit" name="enviar" value="ACTUALIZAR">
     <a href="pedidos.php">Regresar</a>
