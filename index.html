@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/porcion-de-pizza.png" type="image/x-icon">
+</head>
+<body>
+    
+    <header class="header">
+
+        <div class="menu container">
+
+            <a href="inicio.html" class="logo">PizzaLicioso</a>
+            <input type="checkbox" id="menu"/>
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="inicio.html">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Contactos</a></li>
+                </ul>
+            </nav>
+            <div>
+                <ul>
+                    <li class="submenu">
+                        <img src="img/car.svg" id="img-carrito" alt="">
+                        <div id="carrito">
+                            <table id="lista-carrito">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
+                                        <th>Precio</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <a href="#" id="vaciar-carrito" class="btn-2">Vaciar carrito</a>
+                        </div>    
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>"Sabor auténtico, creaciones infinitas" </h1>
+                <p>
+                    ¡Bienvenido/a a la página oficial de Pizzalicioso!
+                    En nuestro hogar virtual de sabores irresistibles, te invitamos a explorar un mundo de pizzas artesanales 
+                    que despiertan los sentidos. Desde la frescura de los ingredientes hasta la maestría en cada masa, en 
+                    cada bocado descubrirás la pasión que dedicamos a cada creación.
+                </p>
+                <a href="agregarPedido.php" class="btn-1">Hacer pedido</a>
+            </div>
+    </header>
+
+    <section class="icons">
+        <div class="icon">
+            <img src="img/i1.svg" alt="">
+        </div>
+        <div class="icon">
+            <img src="img/i2.svg" alt="">
+        </div>
+        <div class="icon">
+            <img src="img/i3.svg" alt="">
+        </div>
+        <div class ="icon">
+            <img src="img/i4.svg" alt="">
+        </div>
+        <div class ="icon">
+            <img src="img/i5.svg" alt="">
+        </div>
+        <div class ="icon">
+            <img src="img/i6.svg" alt="">
+        </div>
+        <div class ="icon">
+            <img src="img/i7.svg" alt="">
+        </div>
+        <div class ="icon">
+            <img src="img/i8.svg" alt="">
+        </div>
+        <div class ="icon">
+            <img src="img/i9.svg" alt="">
+        </div>
+        <div class ="icon">
+            <img src="img/i10.svg" alt="">
+        </div>
+    </section>
+
+    <section class="products container" id="lista-1">
+
+        <h2>Pizzas</h2>
+
+        <div class="products-content">
+
+            <div class="product">
+                <img src="img/Pizza-Muzzarella.jpg" alt="">
+                <div class="prduct-txt">
+                    <h3>Pizza muzza</h3>
+                    <p>Contiene queso muzzarella,oregáno y aceitunas</p>
+                    <p class="precio">$1.999</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="1">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/especial.jpg" alt="">
+                <div class="prduct-txt">
+                    <h3>Pizza especial con morrones</h3>
+                    <p>Contiene jamón muzarella morones y aceitunas</p>
+                    <p class="precio">$2.500</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="2">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/fugazetta.jpg" alt="">
+                <div class="prduct-txt">
+                    <h3>Pizza fugazetta</h3>
+                    <p>Contiene queso muzza y cebollas salteadas con pimienta</p>
+                    <p class="precio">$2.200</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="3">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/napo.PNG" alt="">
+                <div class="prduct-txt">
+                    <h3>Pizza napolitana</h3>
+                    <p>Contiene queso muzza,albahaca y salsa especial</p>
+                    <p class="precio">$3.000</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="4">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/calabresaa.PNG" alt="">
+                <div class="prduct-txt">
+                    <h3>Pizza calabresa</h3>
+                    <p>Contiene queso muzza,salame,oregano</p>
+                    <p class="precio">$2.500</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="5">Agregar al carrito</a>
+                </div>
+            </div>
+            <div class="product">
+                <img src="img/salchipizza.PNG" alt="">
+                <div class="prduct-txt">
+                    <h3>Salchipizza</h3>
+                    <p>Contiene queso muzza,salchichas y jamón.</p>
+                    <p class="precio">$2.500</p>
+                    <a href="#" class="agregar-carrito btn-2" data-id="6">Agregar al carrito</a>
+                </div>
+            </div> 
+        </div>
+    </section>
+
+    <section class="services">
+
+        <h2>Servicios</h2>
+
+        <div class="services-content container">
+
+            <div class="service">
+                <h3>Comida</h3>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Accusantium id consequatur, perspiciatis at eveniet, vitae
+                    distinctio consectetur dolores, aliquam dolorem dolorum quidem 
+                    nemo explicabo! Harum quibusdam expedita fugiat laudantium maxime.
+                </p>
+            </div>
+            <div class="service">
+                <h3>Comida</h3>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Accusantium id consequatur, perspiciatis at eveniet, vitae
+                    distinctio consectetur dolores, aliquam dolorem dolorum quidem 
+                    nemo explicabo! Harum quibusdam expedita fugiat laudantium maxime.
+                </p>
+            </div>
+            <div class="service">
+                <h3>Comida</h3>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Accusantium id consequatur, perspiciatis at eveniet, vitae
+                    distinctio consectetur dolores, aliquam dolorem dolorum quidem 
+                    nemo explicabo! Harum quibusdam expedita fugiat laudantium maxime.
+                </p>
+            </div>
+            <div class="service">
+                <h3>Comida</h3>
+                <hr>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                    Accusantium id consequatur, perspiciatis at eveniet, vitae
+                    distinctio consectetur dolores, aliquam dolorem dolorum quidem 
+                    nemo explicabo! Harum quibusdam expedita fugiat laudantium maxime.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer container" >
+
+        <div class="link">
+            <h3>Redes sociales</h3>
+            <ul>
+                <div class="redes">
+                <li>
+                <img src="img/logotipo-de-instagram.png" alt="logo de Instagram">
+                <span> @pizzalicioso</span>
+                </li>
+                </div>
+                <div class="redes">
+                    <li>
+                    <img src="img/facebook.png" alt="logo de facebook">
+                    <span> Pizzalicioso</span>
+                    </li>
+                </div>
+                <div class="redes">
+                    <li>
+                    <img src="img/gorjeo.png" alt="logo de twitter">
+                    <span> @pizzalicioso.ok</span>
+                    </li>
+                    </div>
+            </ul>
+        </div>
+        <div class="link">
+            <h3>Contactanos</h3>
+            <ul>
+                <div class="redes">
+                    <li>
+                    <img src="img/whatsapp.png" alt="logo de whatsapp">
+                    <span>351-37896554</span>
+                    </li>
+                </div>
+                <div class="redes">
+                    <li>
+                    <img src="img/gmail.png" alt="logo de gmail">
+                    <span>pizzalicioso.rrhh@gmail.com</span>
+                    </li>
+                    </div>
+                <div class="redes">
+                    <li>
+                    <img src="img/ubicacion.png" alt="logo de ubicacion">
+                    <span>Calle Av Veléz Sarfield 452 B° Guemes</span>
+                    </li>
+                    </div>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="carrito.js.js"></script>
+</body>
+</html> 
